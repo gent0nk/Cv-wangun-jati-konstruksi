@@ -110,19 +110,86 @@ img {
     color: var(--secondary-color);
     font-weight: bold;
 }
-
 .nav-toggle {
-    display: none;
+    display: none; /* Tetap tersembunyi di layar besar */
     cursor: pointer;
+    /* Dimensi bisa diatur di media query, atau di sini jika konsisten */
+    width: 25px;  /* Lebar area klik ikon */
+    height: 22px; /* Tinggi area klik ikon (beri sedikit ruang untuk padding jika ada) */
+    padding: 2px 0; /* Padding vertikal kecil agar garis tidak terlalu mepet (opsional) */
 }
 
 .nav-toggle span {
     display: block;
-    width: 22px;
-    height: 2px;
+    width: 100%;  /* Lebar garis span akan mengikuti lebar .nav-toggle */
+    height: 3px;  /* Buat garis sedikit lebih tebal agar jelas terlihat */
     background-color: var(--primary-color);
-    margin: 5px 0;
+    border-radius: 1px; /* Opsional, agar ujung garis sedikit melengkung */
+    /* HAPUS margin: 5px 0; DARI SINI, karena jarak antar garis akan diatur oleh justify-content di parent */
+    transition: all 0.3s ease-in-out; /* Untuk animasi X jika ada */
 }
+
+/* Responsive (Hanya untuk Navigasi Mobile) */
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 1.1rem;
+    }
+    .nav-menu {
+        position: absolute;
+        top: var(--header-height);
+        left: -100%;
+        width: 100%;
+        background-color: var(--white-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        transition: left 0.3s ease-in-out;
+    }
+
+    .nav-menu.show-menu {
+        left: 0;
+    }
+
+    .nav-link {
+        padding: 12px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .nav-toggle {
+        display: flex; /* PENTING: Membuat ikon toggle terlihat di mobile */
+        flex-direction: column;
+        /* Gunakan space-between agar 3 garis terdistribusi merata dengan ruang di antaranya */
+        justify-content: space-between; 
+        /* Ukuran width dan height sudah diatur di global .nav-toggle atau bisa disesuaikan di sini */
+        /* width: 25px; */
+        /* height: 20px; Sesuaikan ini agar pas dengan 3 garis x 3px + ruang diantaranya */
+        /* Misalnya, jika setiap garis 3px, dan kita mau 3 garis, total tinggi garis 9px.
+           Sisa tinggi (misal 20px - 9px = 11px) akan dibagi oleh justify-content: space-between
+           untuk ruang di antara garis pertama-kedua, dan kedua-ketiga.
+        */
+        height: 20px; /* Coba dengan tinggi ini untuk 3 garis @3px */
+    }
+
+    /* Untuk animasi hamburger ke X saat menu aktif (jika script.js Anda menanganinya dengan kelas 'active') */
+    .nav-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); /* Sesuaikan nilai translateY agar pas dengan height baru */
+    }
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg); /* Sesuaikan nilai translateY agar pas */
+                                                    /* Biasanya nilai translateY negatif sama dengan yg positif di span pertama, tapi tinggi span dan container bisa mempengaruhi */
+    }
+
+}
+
 
 .hero {
     height: 70vh;
