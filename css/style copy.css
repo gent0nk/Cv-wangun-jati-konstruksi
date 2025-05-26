@@ -1,0 +1,571 @@
+/* Reset & Basic Styles */
+:root {
+    --primary-color: #2c3e50; /* Warna utama (mis. Biru Gelap Keabuan) */
+    --secondary-color: #f39c12; /* Warna aksen (mis. Oranye Konstruksi) */
+    --light-bg-color: #f8f9fa; /* Latar belakang terang */
+    --text-color: #333;
+    --white-color: #fff;
+    --header-height: 60px;
+    --font-heading: 'Arial', sans-serif; /* Font sederhana */
+    --font-body: 'Arial', sans-serif;   /* Font sederhana */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px; /* Lebar maksimal lebih kecil untuk kesederhanaan */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    padding: 50px 0; /* Padding lebih kecil */
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2rem; /* Ukuran judul lebih kecil */
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-hero {
+    padding-top: calc(var(--header-height) + 30px);
+    padding-bottom: 30px;
+    background-color: #2c3e50;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 2.2rem;
+    color:white;
+    margin-bottom: 10px;
+}
+
+/* Header & Navigasi */
+#header {
+    width: 100%;
+    background-color: var(--white-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    height: var(--header-height);
+}
+
+#header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.nav-link {
+    font-weight: normal; /* Font weight normal */
+    color: var(--primary-color);
+    padding: 10px 12px; /* Padding lebih kecil */
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active-page { /* Untuk menandai halaman aktif */
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+}
+
+/* Hero Section (Home) */
+.hero {
+    height: 70vh; /* Tinggi lebih pendek */
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--primary-color); /* Latar belakang solid */
+    color: var(--white-color);
+    padding-top: var(--header-height); /* Agar tidak tertutup header */
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem; /* Ukuran judul hero lebih kecil */
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px; /* Padding tombol lebih kecil */
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Tentang Kami Section */
+.tentang-content p,
+.tentang-content ul {
+    margin-bottom: 15px;
+}
+.tentang-content ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+.tentang-image img {
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+/* Jasa Layanan Section */
+.layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid sederhana */
+    gap: 20px;
+}
+
+.layanan-item {
+    background-color: var(--light-bg-color);
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+}
+
+.layanan-item img.icon-layanan { /* Untuk placeholder ikon */
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.layanan-item h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+.portofolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Sedikit perbesar jarak antar item jika perlu */
+}
+
+a.portofolio-item {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color); /* Warna teks default di dalam item */
+    
+    /* --- Modifikasi Border --- */
+    border: 2px solid var(--primary-color); /* Border lebih tebal dan gunakan warna primer */
+    /* Atau bisa juga warna abu-abu yang lebih gelap jika var(--primary-color) terlalu mencolok: */
+    /* border: 2px solid #bbb; */
+    
+    border-radius: 8px; /* Radius border sedikit lebih besar agar lebih halus */
+    
+    /* --- Modifikasi Padding --- */
+    padding: 15px; /* Tambah padding agar ada ruang antara border dan konten */
+    
+    background-color: var(--white-color);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Shadow awal yang lebih soft */
+}
+
+a.portofolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12); /* Shadow lebih jelas saat hover */
+    /* Anda juga bisa mengubah warna border saat hover jika mau */
+    /* border-color: var(--secondary-color); */
+}
+
+a.portofolio-item img {
+    width: 100%;
+    border-radius: 4px; /* Sesuaikan radius gambar agar pas dengan padding item */
+    margin-bottom: 15px; /* Jarak lebih besar antara gambar dan judul */
+}
+
+/* --- Modifikasi Teks di Bawah Gambar (Judul Portofolio) --- */
+a.portofolio-item p {
+    font-size: 1.15rem;  /* Ukuran font lebih besar agar terlihat seperti judul */
+    font-weight: bold;   /* Teks tebal */
+    color: var(--primary-color); /* Warna teks menggunakan warna primer agar lebih menonjol */
+    /* Atau warna gelap standar: color: #333; */
+    line-height: 1.4;    /* Sesuaikan line-height jika judulnya bisa lebih dari satu baris */
+    margin-top: 0;       /* Jika sudah diatur oleh margin-bottom gambar */
+    /* Jika perlu, tambahkan sedikit margin-bottom jika ada elemen lain di bawahnya di masa depan */
+    /* margin-bottom: 5px; */
+}
+/* Kontak Section */
+.kontak-info p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.kontak-icon { /* Placeholder ikon */
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    background-color: #ccc; /* Warna placeholder */
+    border-radius: 2px;
+    display: inline-block;
+    text-align: center;
+    line-height: 18px;
+    font-size: 10px;
+    color: #555;
+}
+
+.kontak-form .form-group {
+    margin-bottom: 15px;
+}
+
+.kontak-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.kontak-form input[type="text"],
+.kontak-form input[type="email"],
+.kontak-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: var(--font-body);
+}
+
+.kontak-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.map-placeholder img {
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+/* Footer */
+#footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px; /* Jarak dari konten terakhir */
+}
+
+#footer p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Responsive (Hanya untuk Navigasi Mobile) */
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 1.1rem; /* Ukuran logo lebih kecil di mobile */
+    }
+    .nav-menu {
+        position: absolute;
+        top: var(--header-height);
+        left: -100%;
+        width: 100%;
+        background-color: var(--white-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        transition: left 0.3s ease-in-out;
+    }
+
+    .nav-menu.show-menu {
+        left: 0;
+    }
+
+    .nav-link {
+        padding: 12px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 25px;
+        height: 20px;
+    }
+}
+
+/* ... (CSS yang sudah ada sebelumnya, termasuk untuk .portofolio-item) ... */
+
+/* Jasa Layanan Section */
+.layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid sederhana */
+    gap: 20px;
+}
+
+a.layanan-item { /* Mengganti gaya dari div.layanan-item ke a.layanan-item */
+    display: block; /* Agar link mengisi area kartu */
+    text-decoration: none; /* Menghilangkan garis bawah default link */
+    color: var(--text-color); /* Menggunakan warna teks default */
+    background-color: var(--light-bg-color);
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efek hover halus */
+}
+
+a.layanan-item:hover {
+    transform: translateY(-5px); /* Efek sedikit terangkat saat hover */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Bayangan saat hover */
+}
+
+a.layanan-item img.icon-layanan { /* Styling untuk ikon di dalam link */
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+a.layanan-item h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+a.layanan-item p {
+    font-size: 0.9rem; /* Pastikan ukuran font sesuai */
+    line-height: 1.5; /* Pastikan keterbacaan baik */
+}
+
+/* ... (CSS yang sudah ada setelahnya) ... */
+
+
+.btn { /* Gaya dasar tombol yang sudah ada */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: var(--secondary-color); /* Warna tombol utama */
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    text-align: center; /* Tambahkan jika belum ada */
+    text-decoration: none; /* Pastikan link tidak bergaris bawah */
+    transition: opacity 0.2s ease; /* Efek hover yang sudah ada */
+}
+
+.btn:hover { /* Efek hover yang sudah ada */
+    opacity: 0.9;
+}
+
+/* Tombol WhatsApp Khusus */
+.btn-whatsapp {
+    background-color: #25D366; /* Warna hijau WhatsApp */
+    color: var(--white-color) !important; /* Pastikan teks putih */
+    /* Mewarisi padding, border-radius, font-weight, dll. dari .btn jika digunakan bersamaan,
+       atau definisikan secara eksplisit jika .btn-whatsapp digunakan sendiri.
+       Untuk kesederhanaan, jika .btn sudah ada dan baik, .btn-whatsapp bisa hanya menimpa warna.
+       Jika .btn tidak selalu diterapkan, maka definisikan semua properti di sini:
+    */
+    /* display: inline-block; (jika tidak pakai kelas .btn) */
+    /* padding: 10px 20px; (jika tidak pakai kelas .btn) */
+    /* border-radius: 3px; (jika tidak pakai kelas .btn) */
+    /* font-weight: bold; (jika tidak pakai kelas .btn) */
+    /* text-align: center; (jika tidak pakai kelas .btn) */
+    /* text-decoration: none; (jika tidak pakai kelas .btn) */
+    /* border: none; (jika tidak pakai kelas .btn) */
+    /* cursor: pointer; (jika tidak pakai kelas .btn) */
+}
+
+.btn-whatsapp:hover {
+    background-color: #1DAE54; /* Warna hijau WhatsApp lebih gelap saat hover */
+    opacity: 1; /* Atur ulang opacity jika .btn menimpanya */
+}
+
+.btn-whatsapp img { /* Styling untuk ikon di dalam tombol WhatsApp */
+    width: 20px; /* Sesuaikan ukuran ikon jika perlu */
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+}
+
+/* Di css/style.css */
+
+/* ... (CSS yang sudah ada sebelumnya) ... */
+
+.main-project-image {
+    /* Pengaturan yang sudah ada mungkin: */
+    /* max-width: 100%; */ /* Ini bagus untuk responsivitas dasar */
+    /* height: auto; */    /* Menjaga aspek rasio */
+    
+    /* --- BARU: Pengaturan untuk mengecilkan gambar --- */
+    width: 70%;      /* Misalnya, buat lebar gambar 70% dari kontainer induknya */
+    /* Atau Anda bisa menggunakan nilai piksel tetap, contoh: width: 600px; */
+    /* Pastikan max-width tetap 100% agar tidak meluber di layar sangat kecil jika menggunakan piksel tetap */
+    max-width: 100%; /* Jaga agar tetap responsif */
+    
+    display: block; /* Diperlukan agar margin auto bekerja untuk centering */
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-bottom yang sudah ada: 15px; */
+    /* border-radius yang sudah ada: 5px; */
+    /* border yang sudah ada: 1px solid #ddd; */
+}
+
+/* Jika gambar Anda dibungkus div dengan text-align: center, seperti ini:
+   <div style="text-align: center;">
+       <img class="main-project-image" ...>
+   </div>
+   Maka, display: block; margin-left: auto; margin-right: auto; pada .main-project-image 
+   akan tetap efektif untuk centering dan memberikan kontrol yang lebih baik.
+   Alternatifnya, jika hanya text-align:center pada parent, image harus display: inline-block; agar terpengaruh.
+   Namun, display:block; dan margin:auto; lebih umum untuk centering elemen block.
+*/
+
+/* Galeri Thumbnail di bawah gambar utama (jika ada dan ingin disesuaikan) */
+.thumbnail-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Thumbnail di tengah */
+    margin-top: 15px; /* Jarak dari gambar utama */
+}
+
+.thumbnail-gallery img {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* ... (CSS lainnya) ... */
+
+/* Di css/style.css */
+
+/* ... (CSS yang sudah ada sebelumnya, termasuk untuk .main-project-image) ... */
+
+.portfolio-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Default: 1 kolom untuk mobile */
+    gap: 30px; /* Jarak antar kolom dan baris jika bertumpuk */
+}
+
+.project-visuals {
+    /* Kontainer untuk gambar utama dan thumbnail */
+    /* Mungkin tidak perlu style khusus jika .main-project-image sudah di-center */
+}
+
+.project-text-content {
+    /* Kontainer untuk .project-info dan .project-description */
+}
+
+/* Terapkan layout 2 kolom untuk layar yang lebih besar (misalnya, tablet dan desktop) */
+@media (min-width: 769px) { /* Anda bisa sesuaikan breakpoint 769px ini */
+    .portfolio-detail-layout {
+        grid-template-columns: 0.8fr 1.2fr; /* Kolom gambar lebih kecil (0.8 bagian), kolom teks lebih besar (1.2 bagian) */
+        /* Atau bisa juga: grid-template-columns: 40% 58%; (dengan gap 2%) */
+        /* Atau: grid-template-columns: 1fr 1fr; (untuk lebar yang sama) */
+        align-items: start; /* Menyejajarkan item di bagian atas kolom masing-masing */
+    }
+}
+
+/* Pastikan .project-info dan .project-description punya styling yang baik */
+.project-info h2,
+.project-description h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+.project-info ul, .project-description ul { /* Jika ada list di deskripsi */
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+.project-info ul li, .project-description ul li {
+    margin-bottom: 8px;
+}
+.project-info ul li strong { /* Agar : setelah strong tidak terlalu jauh */
+    margin-right: 5px;
+}
+.project-info ul li ul { /* Sub-list di lingkup pekerjaan */
+    margin-top: 5px;
+    list-style: circle; /* Bullet berbeda untuk sub-list */
+    padding-left: 25px;
+}
+
+
+/* ... (CSS lainnya) ... */

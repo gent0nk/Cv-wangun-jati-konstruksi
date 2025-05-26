@@ -1,0 +1,529 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #f39c12;
+    --light-bg-color: #f8f9fa;
+    --text-color: #333;
+    --white-color: #fff;
+    --header-height: 60px;
+    --font-heading: 'Arial', sans-serif;
+    --font-body: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-hero {
+    padding-top: calc(var(--header-height) + 30px);
+    padding-bottom: 30px;
+    background-color: #2c3e50; /* Menggunakan var(--primary-color) akan lebih konsisten */
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 2.2rem;
+    color: var(--white-color);
+    margin-bottom: 10px;
+}
+
+#header {
+    width: 100%;
+    background-color: var(--white-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    height: var(--header-height);
+}
+
+#header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.nav-link {
+    font-weight: normal;
+    color: var(--primary-color);
+    padding: 10px 12px;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active-page {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+}
+
+.hero {
+    height: 70vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding-top: var(--header-height);
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.tentang-content p,
+.tentang-content ul {
+    margin-bottom: 15px;
+}
+
+.tentang-content ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.tentang-image img {
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+a.layanan-item {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--light-bg-color);
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.layanan-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+a.layanan-item .icon-layanan { /* Menggunakan class selector untuk ikon di dalam a.layanan-item */
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+a.layanan-item h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+a.layanan-item p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.portofolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+a.portofolio-item {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: var(--white-color);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+a.portofolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+a.portofolio-item img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+a.portofolio-item p {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 1.4;
+    margin-top: 0;
+}
+
+.kontak-info p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.kontak-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    background-color: #ccc;
+    border-radius: 2px;
+    display: inline-block;
+    text-align: center;
+    line-height: 18px;
+    font-size: 10px;
+    color: #555;
+}
+
+.kontak-form .form-group {
+    margin-bottom: 15px;
+}
+
+.kontak-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.kontak-form input[type="text"],
+.kontak-form input[type="email"],
+.kontak-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: var(--font-body);
+}
+
+.kontak-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.map-placeholder img {
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+#footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+#footer p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: var(--white-color) !important; /* Dipertahankan jika memang ada potensi override kuat dari .btn */
+}
+
+.btn-whatsapp:hover {
+    background-color: #1DAE54;
+    opacity: 1;
+}
+
+.btn-whatsapp img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.main-project-image {
+    width: 70%;
+    max-width: 100%;
+    height: auto; /* Ditambahkan untuk menjaga aspek rasio jika belum ada */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px; /* Ditambahkan jika belum ada atau sesuaikan */
+    border-radius: 5px; /* Ditambahkan jika belum ada atau sesuaikan */
+    border: 1px solid #ddd; /* Ditambahkan jika belum ada atau sesuaikan */
+}
+
+.thumbnail-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.thumbnail-gallery img {
+    width: 350px; /* Ukuran ini sangat besar untuk thumbnail, mungkin ingin Anda sesuaikan */
+    height: 200px; /* Ukuran ini sangat besar untuk thumbnail, mungkin ingin Anda sesuaikan */
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.portfolio-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.project-info h2,
+.project-description h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.project-info ul, 
+.project-description ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.project-info ul li, 
+.project-description ul li {
+    margin-bottom: 8px;
+}
+
+.project-info ul li strong {
+    margin-right: 5px;
+}
+
+.project-info ul li ul {
+    margin-top: 5px;
+    list-style: circle;
+    padding-left: 25px;
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 1.1rem;
+    }
+    .nav-menu {
+        position: absolute;
+        top: var(--header-height);
+        left: -100%;
+        width: 100%;
+        background-color: var(--white-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        transition: left 0.3s ease-in-out;
+    }
+    .nav-menu.show-menu {
+        left: 0;
+    }
+    .nav-link {
+        padding: 12px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 25px;
+        height: 20px;
+    }
+    .portfolio-detail-layout { /* Di media query, kolom tetap 1 */
+        /* Tidak perlu diubah jika sudah 1fr secara default */
+    }
+}
+
+/* Penyesuaian untuk layout 2 kolom di layar lebih besar */
+@media (min-width: 769px) {
+    .portfolio-detail-layout {
+        grid-template-columns: 0.8fr 1.2fr;
+        align-items: start;
+    }
+}
+
+.service-detail-content {
+    /* Styling khusus untuk konten detail layanan jika ada */
+}
+
+.service-detail-content h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.5rem; /* Anda bisa sesuaikan ukurannya jika ingin sama persis dengan H2 di portofolio (1.6rem) */
+    margin-top: 30px;   /* Beri jarak atas yang cukup dari elemen sebelumnya atau <hr> */
+    margin-bottom: 15px; /* Jarak ke konten di bawahnya (paragraf/list) */
+    
+    /* --- Tambahan untuk garis bawah --- */
+    padding-bottom: 8px; /* Jarak antara teks judul dan garis bawah */
+    border-bottom: 3px solid var(--secondary-color); /* Garis bawah kuning/oranye, ketebalan 3px */
+    display: inline-block; /* Agar border-bottom hanya sepanjang teks judul jika judul pendek */
+    /* Jika ingin garis bawah full-width (sepanjang kontainer), hapus 'display: inline-block;' */
+    /* dan pastikan elemen h3 adalah block (defaultnya memang block) */
+}
+
+/* Styling untuk H4 (sub-judul seperti "Proses Utama...") di dalam detail layanan */
+.service-detail-content h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-color); /* Atau bisa sedikit lebih soft, misal #444 */
+    font-size: 1.25rem; /* Sedikit lebih kecil dari H3 */
+    font-weight: bold; /* Atau '600' */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* H4 biasanya tidak perlu garis bawah agar hirarki jelas, tapi jika mau, bisa ditambahkan: */
+    /* padding-bottom: 3px; */
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.service-detail-content ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.service-detail-content ul li {
+    margin-bottom: 8px;
+}
+
+.service-detail-content p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* ... (CSS yang sudah ada setelahnya, seperti .project-info h2, dll.) ... */
+
+/* Pastikan gaya untuk H2 di halaman detail portofolio tetap ada dan sesuai, 
+   karena itu yang menjadi referensi visual Anda */
+.project-info h2,
+.project-description h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--secondary-color); /* Ini adalah gaya referensi Anda */
+}
+
+.project-description h3 { /* Gaya untuk "Tantangan & Solusi:" jika ingin disamakan */
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.3rem; /* Atau 1.4rem agar sedikit beda dari H2 */
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding-bottom: 5px; /* Tambahkan ini jika belum ada */
+    border-bottom: 2px solid var(--secondary-color); /* Tambahkan ini jika belum ada */
+    display: inline-block; /* Opsional, agar garis bawah mengikuti panjang teks */
+}
